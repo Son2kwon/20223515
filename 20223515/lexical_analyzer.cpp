@@ -24,6 +24,7 @@ bool isNumber(const string& str) {
 	}
 }
 
+// 조건에서 주어진 lexical
 void lexical() {
 	if (current_index < tokenStream.size()) {
 		token_string = tokenStream[current_index];

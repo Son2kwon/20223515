@@ -8,14 +8,25 @@
 using namespace std;
 
 extern vector<string> tokenStream;
+int type;
 
 int main(int argc, char* argv[]) {
 	ifstream f;
-	f.open(argv[1]);
+	string file_name;
+	if (argv[1] == "-v") {
+		file_name = argv[2];
+		type = typeB;
+	}
+	else {
+		file_name = argv[1];
+		type = typeA;
+	}
+		
+
+	f.open(file_name);
 	vector<Sentence> sentences;	// 문장들을 저장하는 sentences vector
 
 	string line;
-	int ID = 0, CONST = 0, OP = 0;
 
 	if (f.is_open()) {
 		while (getline(f, line)) {	// 1문장씩 읽어오면서 sentence에 저장
